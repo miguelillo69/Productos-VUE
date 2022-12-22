@@ -46,6 +46,7 @@ export default {
               <tr class="text-white text-center">
                 <th>Id</th>
                 <th>Nombre</th>
+                <th>Categoría</th>
                 <th>Uds.</th>
                 <th>Precio/u</th>
                 <th>Importe</th>

@@ -6,7 +6,8 @@ export const store = {
     debug: true,
     state: reactive({
         products: [],
-        errors: []
+        errors: [],
+        categories: []
     }),
 
     async listarProductsInServer() {
@@ -62,11 +63,7 @@ export const store = {
 
     async addProductStore(product) {
         try {
-            var response = await axios.post(url + "/products", {
-                nombre: product.nombre,
-                uds: product.uds,
-                precio: product.precio
-            })
+            var response = await axios.post(url + "/products", product)
             this.state.products.push(
                 response.data
             )
@@ -82,14 +79,45 @@ export const store = {
             var response = await axios.patch(url + "/products/" + product.id, {
                 nombre: product.nombre,
                 uds: product.uds,
-                precio: product.precio
+                precio: product.precio,
+                category: product.category
             })
-            this.state.products.push(
+            let position = this.state.products.findIndex((element) => element.id === product.id);
+            this.state.products.splice(position, 1,response.data);
+        } catch (error) {
+            this.addError('Error: no se ha editado el producto. ' + response.message);
+        }
+    },
+
+    async getProductStore(id) {
+        try {
+            var response = await axios.get(url + "/products/" + id)
+            return response.data;
+        } catch (error) {
+            this.addError('Error: no se ha mostrado el registro. ' + error);
+            return {}
+        }
+    },
+
+    async getCategories() {
+        try {
+            var response = await axios.get(url + "/categories")
+            response.data.forEach((category) => { this.state.categories.push(category) })
+
+        } catch(error) {
+            this.addError('Error: no se ha listado las categorías. ' + error);
+        }
+    },
+
+    async addCategoryStore(category) {
+        try {
+            var response = await axios.post(url + "/categories", category)
+            this.state.categories.push(
                 response.data
             )
 
         } catch (error) {
-            this.addError('Error: no se ha añadido el producto. ' + response.message);
+            this.addError('Error: no se ha añadido la categoría. ' + response.message);
         }
     },
 

@@ -3,32 +3,71 @@
     {
       "id": 1,
       "nombre": "TV Samsung",
-      "uds": 5,
-      "precio": 450
-    },
-    {
-      "nombre": "TV Sanyo",
-      "uds": 4,
-      "precio": 399,
-      "id": 3
-    },
-    {
-      "nombre": "TV LG",
-      "uds": 22,
-      "precio": 1099,
-      "id": 4
+      "category": 1,
+      "uds": 14,
+      "precio": 499
     },
     {
       "nombre": "TV LG 65pulgadas",
-      "uds": 11,
-      "precio": 509,
+      "category": 1,
+      "uds": 10,
+      "precio": 722,
       "id": 5
     },
     {
-      "nombre": "PS5",
+      "nombre": "PS5-1T",
+      "category": 5,
       "uds": 23,
       "precio": 899,
       "id": 6
+    },
+    {
+      "nombre": "XBox",
+      "category": 5,
+      "uds": 10,
+      "precio": 399,
+      "id": 7
+    },
+    {
+      "nombre": "Silla de ordenador",
+      "uds": 2,
+      "precio": 222,
+      "category": 2,
+      "id": 10
+    },
+    {
+      "nombre": "Ron Barcelo \"Gran Añejo\"",
+      "uds": 10,
+      "precio": 14.95,
+      "category": 4,
+      "id": 11
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Televisores",
+      "description": "TV y pantallas pc"
+    },
+    {
+      "id": 2,
+      "name": "Mobiliario",
+      "description": "Muebles de oficina"
+    },
+    {
+      "name": "Cajas ",
+      "description": "Cajas de decoración y para guardar",
+      "id": 3
+    },
+    {
+      "name": "Alimentación",
+      "description": "Productos de alto gourmet para comer y beber",
+      "id": 4
+    },
+    {
+      "name": "Consolas",
+      "description": "Gran variedad de consolas, para jugar con tus videojuegos",
+      "id": 5
     }
   ]
 }
