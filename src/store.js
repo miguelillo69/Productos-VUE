@@ -70,6 +70,7 @@ export const store = {
 
         } catch (error) {
             this.addError('Error: no se ha añadido el producto. ' + response.message);
+            throw error
         }
 
     },

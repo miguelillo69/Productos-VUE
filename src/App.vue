@@ -1,5 +1,5 @@
 <script>
-import AppMenu from "./components/AppMenu.vue";
+import AppMenu from "../../../todos_pinia/todosPinia/src/components/AppMenu.vue";
 import AppTitle from "./components/AppTitle.vue";
 import MensajesAlert from "./components/MensajesAlert.vue"
 import { store } from "./store";
